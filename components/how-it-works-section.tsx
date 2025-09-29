@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 const steps = [
@@ -36,17 +35,15 @@ export function HowItWorksSection() {
           </p>
         </div>
 
-        <div className="mx-auto mt-10 sm:mt-16 flex flex-col md:flex-row items-center justify-center gap-8">
+        <div className="mx-auto mt-10 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-center md:w-1/3">
-            
+            <div key={index} className="flex flex-col items-center h-full">
               <div className="flex items-center justify-center mb-4">
                 <div className="h-12 w-12 rounded-full bg-primary flex items-center justify-center shadow-lg">
                   <span className="text-lg font-bold text-primary-foreground">{step.step}</span>
                 </div>
               </div>
-       
-              <Card className="w-full shadow-md">
+              <Card className="w-full flex-1 flex flex-col justify-between shadow-md">
                 <CardHeader className="flex flex-col items-center pb-2">
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 mb-2">
                     <span className="text-2xl">{step.icon}</span>
@@ -57,10 +54,6 @@ export function HowItWorksSection() {
                   <CardDescription className="text-base sm:text-lg text-muted-foreground text-center">{step.description}</CardDescription>
                 </CardContent>
               </Card>
-        
-              {index < steps.length - 1 && (
-                <div className="hidden md:block w-full h-0.5 bg-primary/30 my-4" />
-              )}
             </div>
           ))}
         </div>
